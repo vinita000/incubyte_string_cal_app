@@ -50,6 +50,8 @@ RSpec.describe ManipulateString do
 
   it "supports custom delimiters" do
     expect(string_calculate.add("//;\n1;2")).to eq(3)
+    expect(string_calculate.add("//|\n2|3|4")).to eq(9)
+    expect(string_calculate.add("//@\n4@5@6")).to eq(15)
   end
 end
 
