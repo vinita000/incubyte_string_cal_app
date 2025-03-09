@@ -42,6 +42,11 @@ RSpec.describe ManipulateString do
       expect { string_calculate.add(input) }.to raise_error(ArgumentError, "Invalid input format: Only numbers are allowed")
     end
   end
+
+  it "handles newlines as delimiters" do
+    expect(string_calculate.add("1\n2,3")).to eq(6)
+    expect(string_calculate.add("5\n10,15")).to eq(30)
+  end
 end
 
 
