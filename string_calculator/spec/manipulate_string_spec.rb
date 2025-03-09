@@ -20,6 +20,10 @@ RSpec.describe ManipulateString do
     expect(string_calculate.add("5")).to eq(5)
   end
 
+  it "raises an ArgumentError when an invalid string is provided" do
+    expect { string_calculate.add("a") }.to raise_error(ArgumentError, "Invalid input format: Only numbers are allowed")
+  end
+
 end
 
 
