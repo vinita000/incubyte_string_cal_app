@@ -29,6 +29,7 @@ RSpec.describe ManipulateString do
   it "returns the sum of two numbers" do
     expect(string_calculate.add("1,5")).to eq(6)
     expect(string_calculate.add("2,4")).to eq(6)
+    expect(string_calculate.add("2,4000000")).to eq(4000002)
   end
 
   it "handles an unknown number of values" do
