@@ -7,6 +7,11 @@ class ManipulateString
 
     delimeters = ["\n", ",", "//"]
 
+    if numbers.start_with?("//")
+      delimeter_section, _ = numbers.split("\n", 2)
+      delimeters << delimeter_section.gsub("//", "")
+    end
+
     num_list = [numbers]
 
     delimeters.each do |delimiter|
