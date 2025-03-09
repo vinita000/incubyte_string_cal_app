@@ -25,7 +25,7 @@ class ManipulateString
 
     num_list = num_list.map(&:to_i)
 
-    negatives = num_list.select { |num| num < 0 }
+    negatives = num_list.select(&:negative?)
     raise "negative numbers not allowed: #{negatives.join(', ')}" if negatives.any?
 
 
