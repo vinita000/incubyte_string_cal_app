@@ -15,6 +15,10 @@ RSpec.describe ManipulateString do
     end
   end
 
+  it "returns the number itself for a single number" do
+    expect(string_calculate.add("1")).to eq(1)
+    expect(string_calculate.add("5")).to eq(5)
+  end
 
 end
 
