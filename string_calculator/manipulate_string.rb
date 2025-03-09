@@ -5,7 +5,13 @@ class ManipulateString
 
     return 0 if numbers.empty?
 
+    delimeters = ["\n", ",", "//"]
+
     num_list = [numbers]
+
+    delimeters.each do |delimiter|
+      num_list = num_list.map{|num| num.split(delimiter)}.flatten.compact
+    end
 
     if num_list.any? { |n| n.to_s !~ /^-?\d+$/ }
       raise ArgumentError, "Invalid input format: Only numbers are allowed"
