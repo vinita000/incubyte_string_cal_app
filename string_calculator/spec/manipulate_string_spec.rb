@@ -24,6 +24,11 @@ RSpec.describe ManipulateString do
     expect { string_calculate.add("a") }.to raise_error(ArgumentError, "Invalid input format: Only numbers are allowed")
   end
 
+  it "returns the sum of two numbers" do
+    expect(string_calculate.add("1,5")).to eq(6)
+    expect(string_calculate.add("2,4")).to eq(6)
+  end
+
 end
 
 
