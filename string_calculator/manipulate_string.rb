@@ -13,9 +13,11 @@ class ManipulateString
       num_list = num_list.map{|num| num.split(delimiter)}.flatten.compact
     end
 
+    ## invalidate or raise error when non string is provided
     if num_list.any? { |n| n.to_s !~ /^-?\d+$/ }
       raise ArgumentError, "Invalid input format: Only numbers are allowed"
     end
+
     num_list = num_list.map(&:to_i)
 
     return num_list.sum
