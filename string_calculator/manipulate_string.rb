@@ -1,6 +1,6 @@
 class ManipulateString
 
-  def self.add(numbers)
+  def add(numbers)
     return 0 if numbers.empty?
   end
 end
