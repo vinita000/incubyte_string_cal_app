@@ -53,6 +53,11 @@ RSpec.describe ManipulateString do
     expect(string_calculate.add("//|\n2|3|4")).to eq(9)
     expect(string_calculate.add("//@\n4@5@6")).to eq(15)
   end
+
+  it "raises an exception for negative numbers" do
+    expect { string_calculate.add("1,-2,3,-4") }.to raise_error("negative numbers not allowed: -2, -4")
+    expect { string_calculate.add("-5,-10") }.to raise_error("negative numbers not allowed: -5, -10")
+  end
 end
 
 
